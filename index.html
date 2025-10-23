@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Current & Feels Like Temperature</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input
+                type="text"
+                id="city-search"
+                class="search-input"
+                placeholder="Search city..."
+                autocomplete="off"
+            />
+            <button id="search-btn" class="search-button">
+                <span>🔍</span>
+            </button>
+            <button id="location-btn" class="location-button">
+                <span>📍</span>
+            </button>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="error-container hidden">
+            <p class="error-text"></p>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading-container">
+            <div class="spinner"></div>
+            <p>Getting weather data...</p>
+        </div>
+
+        <!-- Weather Display -->
+        <div id="weather-display" class="weather-container hidden">
+            <!-- City Name -->
+            <h1 class="city-name" id="city-name"></h1>
+
+            <!-- Weather Icon and Description -->
+            <div class="weather-icon" id="weather-icon">☀️</div>
+            <p class="weather-description" id="weather-description"></p>
+
+            <!-- Current Temperature Card -->
+            <div class="temperature-card">
+                <h3 class="temp-label">Current Temperature</h3>
+                <div class="temp-row">
+                    <div class="temp-box">
+                        <div class="temp-value" id="current-celsius">--°</div>
+                        <div class="temp-unit">Celsius</div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="temp-box">
+                        <div class="temp-value" id="current-fahrenheit">--°</div>
+                        <div class="temp-unit">Fahrenheit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feels Like Temperature Card -->
+            <div class="temperature-card">
+                <h3 class="temp-label">Feels Like</h3>
+                <div class="temp-row">
+                    <div class="temp-box">
+                        <div class="temp-value" id="feels-celsius">--°</div>
+                        <div class="temp-unit">Celsius</div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="temp-box">
+                        <div class="temp-value" id="feels-fahrenheit">--°</div>
+                        <div class="temp-unit">Fahrenheit</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Weather Info -->
+            <div class="additional-info-container">
+                <div class="info-box">
+                    <p class="info-label">Humidity</p>
+                    <p class="info-value" id="humidity">--</p>
+                </div>
+                <div class="info-box">
+                    <p class="info-label">Wind Speed</p>
+                    <p class="info-value" id="wind-speed">--</p>
+                </div>
+                <div class="info-box">
+                    <p class="info-label">Pressure</p>
+                    <p class="info-value" id="pressure">--</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
