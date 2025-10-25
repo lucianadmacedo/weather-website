@@ -1,0 +1,18 @@
+# Netlify configuration file
+
+[build]
+  # Publish directory (where your website files are)
+  publish = "."
+
+  # Functions directory (where serverless functions are)
+  functions = "netlify/functions"
+
+# Redirect rules (optional - for SPA routing if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+  # Don't redirect API calls
+  conditions = {Role = ["visitor"]}

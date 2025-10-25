@@ -1,0 +1,16 @@
+{
+  "name": "weather-website",
+  "version": "1.0.0",
+  "description": "Weather website with secure API proxy",
+  "main": "index.html",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": ["weather", "netlify", "serverless"],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,6 +1,6 @@
-// OpenWeatherMap API Configuration
-const API_KEY = '42b14313ead9beeb67c25fd77291a879'; // Replace with your API key
-const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+// API Configuration - Using secure Netlify proxy function
+// No API key needed in frontend! The serverless function handles it securely.
+const API_URL = '/.netlify/functions/weather';
 
 // DOM Elements
 const citySearchInput = document.getElementById('city-search');
@@ -120,7 +120,7 @@ function updateWeatherDisplay(data) {
 async function fetchWeatherByCoords(lat, lon) {
     try {
         setLoading(true);
-        const response = await fetch(`${API_URL}?lat=${lat}&lon=${lon}&appid=${API_KEY}`);
+        const response = await fetch(`${API_URL}?lat=${lat}&lon=${lon}`);
 
         if (!response.ok) {
             throw new Error('Unable to fetch weather data');
@@ -148,7 +148,7 @@ async function fetchWeatherByCity(city) {
 
     try {
         setLoading(true);
-        const response = await fetch(`${API_URL}?q=${encodeURIComponent(city)}&appid=${API_KEY}`);
+        const response = await fetch(`${API_URL}?q=${encodeURIComponent(city)}`);
 
         if (!response.ok) {
             throw new Error('City not found');
